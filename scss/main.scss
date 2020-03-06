@@ -6,6 +6,59 @@
 body {
   text-align: center;
 }
+.nav-bar {
+  margin: 20px;
+  .listItems {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    a {
+      margin-right: 40px;
+      list-style: none;
+      text-decoration: none;
+      color: black;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        transition: all 0.5s ease-out;
+      }
+      &::before {
+        top: -0.5em;
+        bottom: -0.5em;
+        left: -0.5em;
+        right: -0.5em;
+        background: black;
+        transform: scale(0);
+        opacity: 0;
+        z-index: -1;
+      }
+      &::after {
+        top: -0.6em;
+        bottom: -0.6em;
+        left: -0.6em;
+        right: -0.6em;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        transform: scale(1.4);
+        opacity: 0;
+        z-index: -1;
+      }
+      &:hover::before {
+        transform: scale(1);
+        opacity: 1;
+      }
+      &:hover::after {
+        transform: scale(1);
+        opacity: 1;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
 .intro {
   display: inline-block;
   margin: 10px;

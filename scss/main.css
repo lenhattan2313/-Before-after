@@ -9,6 +9,71 @@ body {
   text-align: center;
 }
 
+.nav-bar {
+  margin: 20px;
+}
+
+.nav-bar .listItems {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.nav-bar .listItems a {
+  margin-right: 40px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.nav-bar .listItems a::before, .nav-bar .listItems a::after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.nav-bar .listItems a::before {
+  top: -0.5em;
+  bottom: -0.5em;
+  left: -0.5em;
+  right: -0.5em;
+  background: black;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  z-index: -1;
+}
+
+.nav-bar .listItems a::after {
+  top: -0.6em;
+  bottom: -0.6em;
+  left: -0.6em;
+  right: -0.6em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  opacity: 0;
+  z-index: -1;
+}
+
+.nav-bar .listItems a:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.nav-bar .listItems a:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.nav-bar .listItems a:hover {
+  color: white;
+}
+
 .intro {
   display: inline-block;
   margin: 10px;
